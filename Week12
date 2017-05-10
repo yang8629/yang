@@ -26,7 +26,8 @@
 
 // constants won't change. They're used here to
 // set pin numbers:
-byte seven_seg_digits[10][7] = { { 1,1,1,1,1,1,0 }, // = 0
+byte seven_seg_digits[16][7] = { 
+{ 1,1,1,1,1,1,0 }, // = 0
 { 0,1,1,0,0,0,0 }, // = 1
 { 1,1,0,1,1,0,1 }, // = 2
 { 1,1,1,1,0,0,1 }, // = 3
@@ -35,7 +36,13 @@ byte seven_seg_digits[10][7] = { { 1,1,1,1,1,1,0 }, // = 0
 { 1,0,1,1,1,1,1 }, // = 6
 { 1,1,1,0,0,0,0 }, // = 7
 { 1,1,1,1,1,1,1 }, // = 8
-{ 1,1,1,0,0,1,1 } // = 9
+{ 1,1,1,0,0,1,1 }, // = 9
+{ 1,1,1,0,1,1,1 },  // = A
+{ 0,0,1,1,1,1,1 },  // = b
+{ 0,0,0,1,1,0,1 },  // = c
+{ 0,1,1,1,1,0,1 },  // = d
+{ 1,0,0,1,1,1,1 },  // = E
+{ 1,0,0,0,1,1,1 },   // = F
 };
 const int buttonPin = 12;     // the number of the pushbutton pin
      // the number of the LED pin
@@ -76,9 +83,9 @@ seven_seg_digits[digit][seg]);
 
 void loop() {
 buttonState = digitalRead(buttonPin);
-if(buttonState == HIGH){
+if(buttonState == LOW){
 num ++;
-if(num > 9){
+if(num > 15){
 num = 0;
 }
 }
