@@ -428,7 +428,7 @@ a{
 }
 
 .flip--background{
-background-image: linear-gradient(to top,#222222,#444444);
+background-image: linear-gradient(to top,#222222,#666666);
 color: #FFFFFF;
 }
 
